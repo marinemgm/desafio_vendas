@@ -39,6 +39,15 @@ class ProdutoController extends Controller
         return back()->withInput();
     }
 
+    public function show($id)
+    {
+        try {
+            return Produto::findOrFail($id);
+        } catch (Throwable $th) {
+            return response('Erro ao selecionar o produto', 400);
+        }
+    }
+
     public function edit(Produto $produto)
     {
         return view('produto.form', [
@@ -69,5 +78,10 @@ class ProdutoController extends Controller
         } catch (Throwable $th) {
             return response('Erro ao apagar', 400);
         }
+    }
+
+    public function listaProdutos(Request $request)
+    {
+        return ProdutoService::listaProdutos($request->all());
     }
 }

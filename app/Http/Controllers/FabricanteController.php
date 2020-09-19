@@ -7,6 +7,7 @@ use App\Http\Requests\FabricanteRequest;
 use App\Models\Fabricante;
 use App\Services\FabricanteService;
 use Illuminate\Http\Request;
+use Throwable;
 
 class FabricanteController extends Controller
 {
@@ -65,8 +66,12 @@ class FabricanteController extends Controller
         return back()->withInput();
     }
 
-    public function destroy($id)
+    public function destroy(Fabricante $fabricante)
     {
-        //
+        try {
+            $fabricante->delete();
+        } catch (Throwable $th) {
+            return response('Erro ao apagar', 400);
+        }
     }
 }
