@@ -231,12 +231,33 @@ return [
     */
 
     'menu' => [
-       [
-           'url' => 'fabricantes',
-           'text' => 'Fabricantes',
-           'icon' => 'fas fa-truck'
-       ]
+        [
+            'url' => 'fabricantes',
+            'text' => 'Fabricantes',
+            'icon' => 'fas fa-truck'
+        ],
+        [
+            'url' => 'produtos',
+            'text' => 'Produtos',
+            'icon' => 'fas fa-boxes'
+        ],
+        [
+            'url' => 'clientes',
+            'text' => 'Clientes',
+            'icon' => 'fas fa-users'
+        ],
+        [
+            'url' => 'vendas',
+            'text' => 'Vendas',
+            'icon' => 'fas fa-shopping-cart'
+        ],
+        [
+            'url' => 'users',
+            'text' => 'Usuarios',
+            'icon' => 'fas fa-shopping-cart'
+        ]
     ],
+
 
     /*
     |--------------------------------------------------------------------------
